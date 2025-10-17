@@ -19,17 +19,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="见阿里云教程     按照阿里云步骤走完，如果提醒远程连接计算机端口已关闭的话。可能是没开放端口     需要更改防火墙的策略。   #查看防火墙当前配置    iptables -L -n   #允许所有请i去   iptables -P INPUT ACCEPT 清空默认所有规则  iptables -F 清空自定义所有规则  iptables -X 计数器置0  iptables -Z">
+    <meta name="description" content="参考教程见阿里云教程 防火墙配置问题按照阿里云步骤走完，如果提醒远程连接计算机端口已关闭的话。可能是没开放端口。 需要更改防火墙的策略。 1234567891011121314151617181920212223242526272829# 查看防火墙当前配置iptables -L -n# 允许所有请求iptables -P INPUT ACCEPT# 清空默认所有规则iptables -F# 清空">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CenOS-7.6搭建pptp服务">
 <meta property="og:url" content="http://example.com/2023/02/05/CenOS-7-6%E6%90%AD%E5%BB%BApptp%E6%9C%8D%E5%8A%A1/index.html">
 <meta property="og:site_name" content="雪花的博客">
-<meta property="og:description" content="见阿里云教程     按照阿里云步骤走完，如果提醒远程连接计算机端口已关闭的话。可能是没开放端口     需要更改防火墙的策略。   #查看防火墙当前配置    iptables -L -n   #允许所有请i去   iptables -P INPUT ACCEPT 清空默认所有规则  iptables -F 清空自定义所有规则  iptables -X 计数器置0  iptables -Z">
+<meta property="og:description" content="参考教程见阿里云教程 防火墙配置问题按照阿里云步骤走完，如果提醒远程连接计算机端口已关闭的话。可能是没开放端口。 需要更改防火墙的策略。 1234567891011121314151617181920212223242526272829# 查看防火墙当前配置iptables -L -n# 允许所有请求iptables -P INPUT ACCEPT# 清空默认所有规则iptables -F# 清空">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-02-05T02:36:58.000Z">
-<meta property="article:modified_time" content="2024-10-30T12:11:51.777Z">
+<meta property="article:published_time" content="2023-02-05T10:36:58.000Z">
+<meta property="article:modified_time" content="2025-10-17T20:12:52.786Z">
 <meta property="article:author" content="小雪花白又白">
 <meta property="article:tag" content="技术分享">
 <meta name="twitter:card" content="summary">
@@ -107,7 +107,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B8%85%E7%A9%BA%E9%BB%98%E8%AE%A4%E6%89%80%E6%9C%89%E8%A7%84%E5%88%99"><span class="nav-number">1.</span> <span class="nav-text">清空默认所有规则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B8%85%E7%A9%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E6%89%80%E6%9C%89%E8%A7%84%E5%88%99"><span class="nav-number">2.</span> <span class="nav-text">清空自定义所有规则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E6%95%B0%E5%99%A8%E7%BD%AE0"><span class="nav-number">3.</span> <span class="nav-text">计数器置0</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%81%E8%AE%B8127-0-0-1%E8%AE%BF%E9%97%AE%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1"><span class="nav-number">4.</span> <span class="nav-text">允许127.0.0.1访问本地服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%81%E8%AE%B8%E8%AE%BF%E9%97%AE%E5%A4%96%E9%83%A8%E6%9C%8D%E5%8A%A1"><span class="nav-number">5.</span> <span class="nav-text">允许访问外部服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%81%E8%AE%B8-ping"><span class="nav-number">6.</span> <span class="nav-text">允许 ping</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E5%90%AF-ssh-%E7%AB%AF%E5%8F%A3"><span class="nav-number">7.</span> <span class="nav-text">开启 ssh 端口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E5%90%AF-pptpd-%E7%AB%AF%E5%8F%A3"><span class="nav-number">8.</span> <span class="nav-text">开启 pptpd 端口</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%95%99%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">参考教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">防火墙配置问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">3.</span> <span class="nav-text">注意事项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E"><span class="nav-number">3.1.</span> <span class="nav-text">补充说明</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -120,12 +120,16 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -181,14 +185,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-02-05 10:36:58" itemprop="dateCreated datePublished" datetime="2023-02-05T10:36:58+08:00">2023-02-05</time>
+      <time title="创建时间：2023-02-05 10:36:58" itemprop="dateCreated datePublished" datetime="2023-02-05T10:36:58+00:00">2023-02-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-10-30 20:11:51" itemprop="dateModified" datetime="2024-10-30T20:11:51+08:00">2024-10-30</time>
+      <time title="修改时间：2025-10-17 20:12:52" itemprop="dateModified" datetime="2025-10-17T20:12:52+00:00">2025-10-17</time>
     </span>
 
   
@@ -201,41 +205,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>
-  <a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/41345.html" target"_blank">见阿里云教程</a>
-</p>
-<p>
-  按照阿里云步骤走完，如果提醒远程连接计算机端口已关闭的话。可能是没开放端口
-</P>
-<pre>
-  需要更改防火墙的策略。
-  #查看防火墙当前配置
+        <h2 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h2><p><a href="https://help.aliyun.com/document_detail/41345.html" target="_blank">见阿里云教程</a></p>
+<h2 id="防火墙配置问题"><a href="#防火墙配置问题" class="headerlink" title="防火墙配置问题"></a>防火墙配置问题</h2><p>按照阿里云步骤走完，如果提醒远程连接计算机端口已关闭的话。可能是没开放端口。</p>
+<p>需要更改防火墙的策略。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看防火墙当前配置</span></span><br><span class="line">iptables -L -n</span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许所有请求</span></span><br><span class="line">iptables -P INPUT ACCEPT</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清空默认所有规则</span></span><br><span class="line">iptables -F</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清空自定义所有规则</span></span><br><span class="line">iptables -X</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计数器置0</span></span><br><span class="line">iptables -Z</span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许127.0.0.1访问本地服务</span></span><br><span class="line">iptables -A INPUT -i lo -j ACCEPT</span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许访问外部服务</span></span><br><span class="line">iptables -A INPUT -m state --state ESTABLISHED -j ACCEPT</span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许 ping</span></span><br><span class="line">iptables -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启 ssh 端口</span></span><br><span class="line">iptables -A INPUT -p tcp --dport 22 -j ACCEPT</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启 pptpd 端口</span></span><br><span class="line">iptables -A INPUT -p tcp --dport 1723 -j ACCEPT</span><br></pre></td></tr></table></figure>
 
-<p>  iptables -L -n</p>
-<p>  #允许所有请i去</p>
-<p>  iptables -P INPUT ACCEPT</p>
-<h1 id="清空默认所有规则"><a href="#清空默认所有规则" class="headerlink" title="清空默认所有规则"></a>清空默认所有规则</h1><p>  iptables -F</p>
-<h1 id="清空自定义所有规则"><a href="#清空自定义所有规则" class="headerlink" title="清空自定义所有规则"></a>清空自定义所有规则</h1><p>  iptables -X</p>
-<h1 id="计数器置0"><a href="#计数器置0" class="headerlink" title="计数器置0"></a>计数器置0</h1><p>  iptables -Z</p>
-<h1 id="允许127-0-0-1访问本地服务"><a href="#允许127-0-0-1访问本地服务" class="headerlink" title="允许127.0.0.1访问本地服务"></a>允许127.0.0.1访问本地服务</h1><p>  iptables -A INPUT -i lo -j ACCEPT</p>
-<h1 id="允许访问外部服务"><a href="#允许访问外部服务" class="headerlink" title="允许访问外部服务"></a>允许访问外部服务</h1><p>  iptables -A INPUT -m state –state ESTABLISHED -j ACCEPT</p>
-<h1 id="允许-ping"><a href="#允许-ping" class="headerlink" title="允许 ping"></a>允许 ping</h1><p>  iptables -A INPUT -p icmp -m icmp –icmp-type 8 -j ACCEPT</p>
-<h1 id="开启-ssh-端口"><a href="#开启-ssh-端口" class="headerlink" title="开启 ssh 端口"></a>开启 ssh 端口</h1><p>  iptables -A INPUT -p tcp –dport 22 -j ACCEPT</p>
-<h1 id="开启-pptpd-端口"><a href="#开启-pptpd-端口" class="headerlink" title="开启 pptpd 端口"></a>开启 pptpd 端口</h1><p>  iptables -A INPUT -p tcp –dport 1723 -j ACCEPT<br></pre></p>
-<pre>
-  哎嘿,昨天我搞了半天连不上。后来看了很多教程。才知道是我防火墙未放行。
-  很多网上的教程并未提及防火墙放行这一步步骤。
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>哎嘿,昨天我搞了半天连不上。后来看了很多教程。才知道是我防火墙未放行。</p>
+<p>很多网上的教程并未提及防火墙放行这一步步骤。</p>
+<h3 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h3><p>每次如果更改了DNS和ip段配置后。都要运行这个命令来生效哦：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sysctl -p              <span class="comment"># 生效配置</span></span><br><span class="line">service iptables save  <span class="comment"># 保存防火墙配置</span></span><br><span class="line">service iptables restart  <span class="comment"># 重启防火墙</span></span><br></pre></td></tr></table></figure>
 
-  补充,并提醒一下
-
-  每次如果更改了DNS和ip段配置后。都要运行这个命令来生效哦
-  sysctl -p // 生效配置
-  service iptables save // 保存防火墙配置
-  service iptables restart // 重启防火墙
-
-  如果更改，或添加pptpd账号。也是需要重启pptp的。
-  service pptpd restart // 重启pptp
-</pre>
+<p>如果更改，或添加pptpd账号。也是需要重启pptp的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service pptpd restart  <span class="comment"># 重启pptp</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -280,7 +261,7 @@
 
 <div class="copyright">
   &copy; 
-  <span itemprop="copyrightYear">2024</span>
+  <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

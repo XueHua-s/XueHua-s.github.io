@@ -19,20 +19,20 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="首先看下面这段代码。    遇见了一个需求，需要在部门选择的时候， 名称前面加上一级部门 但是，很多地方都用到了这个封装的组件。如何让这个地方优雅的处理掉。 又不影响到别的地方捏? 我想到了一个点子。子组件判断父组件有没有传递插槽。 如果传了的话，就给elOption传递处理选择显示的插槽。  经过我一番查阅文档和百度，发现setup语法糖没法实现。只能改成setup加return那种。 set">
+    <meta name="description" content="问题背景首先看下面这段代码。  遇见了一个需求，需要在部门选择的时候，名称前面加上一级部门。 但是，很多地方都用到了这个封装的组件。如何让这个地方优雅的处理掉，又不影响到别的地方呢? 解决思路我想到了一个点子。子组件判断父组件有没有传递插槽。如果传了的话，就给elOption传递处理选择显示的插槽。 经过我一番查阅文档和百度，发现setup语法糖没法实现。只能改成setup加return那种。 s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于Vue3如何判断父组件给子组件传了插槽">
 <meta property="og:url" content="http://example.com/2023/08/03/%E5%85%B3%E4%BA%8EVue3%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E7%88%B6%E7%BB%84%E4%BB%B6%E7%BB%99%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E4%BA%86%E6%8F%92%E6%A7%BD/index.html">
 <meta property="og:site_name" content="雪花的博客">
-<meta property="og:description" content="首先看下面这段代码。    遇见了一个需求，需要在部门选择的时候， 名称前面加上一级部门 但是，很多地方都用到了这个封装的组件。如何让这个地方优雅的处理掉。 又不影响到别的地方捏? 我想到了一个点子。子组件判断父组件有没有传递插槽。 如果传了的话，就给elOption传递处理选择显示的插槽。  经过我一番查阅文档和百度，发现setup语法糖没法实现。只能改成setup加return那种。 set">
+<meta property="og:description" content="问题背景首先看下面这段代码。  遇见了一个需求，需要在部门选择的时候，名称前面加上一级部门。 但是，很多地方都用到了这个封装的组件。如何让这个地方优雅的处理掉，又不影响到别的地方呢? 解决思路我想到了一个点子。子组件判断父组件有没有传递插槽。如果传了的话，就给elOption传递处理选择显示的插槽。 经过我一番查阅文档和百度，发现setup语法糖没法实现。只能改成setup加return那种。 s">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/img_5.png">
 <meta property="og:image" content="http://example.com/img/img_6.png">
 <meta property="og:image" content="http://example.com/img/img_7.png">
-<meta property="article:published_time" content="2023-08-03T07:20:21.000Z">
-<meta property="article:modified_time" content="2023-10-28T14:41:56.414Z">
+<meta property="article:published_time" content="2023-08-03T15:20:21.000Z">
+<meta property="article:modified_time" content="2025-10-17T20:12:52.786Z">
 <meta property="article:author" content="小雪花白又白">
 <meta property="article:tag" content="技术分享">
 <meta name="twitter:card" content="summary">
@@ -98,7 +98,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -111,6 +111,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">问题背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">解决思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8JSX"><span class="nav-number">3.</span> <span class="nav-text">为什么使用JSX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">4.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -123,12 +124,16 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -184,14 +189,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-08-03 15:20:21" itemprop="dateCreated datePublished" datetime="2023-08-03T15:20:21+08:00">2023-08-03</time>
+      <time title="创建时间：2023-08-03 15:20:21" itemprop="dateCreated datePublished" datetime="2023-08-03T15:20:21+00:00">2023-08-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-28 22:41:56" itemprop="dateModified" datetime="2023-10-28T22:41:56+08:00">2023-10-28</time>
+      <time title="修改时间：2025-10-17 20:12:52" itemprop="dateModified" datetime="2025-10-17T20:12:52+00:00">2025-10-17</time>
     </span>
 
   
@@ -204,25 +209,17 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <pre>
-首先看下面这段代码。
-</pre>
+        <h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>首先看下面这段代码。</p>
 <p><img src="/../img/img_5.png" alt="img.png"></p>
-<pre>
-遇见了一个需求，需要在部门选择的时候，
-名称前面加上一级部门
-但是，很多地方都用到了这个封装的组件。如何让这个地方优雅的处理掉。
-又不影响到别的地方捏?
-我想到了一个点子。子组件判断父组件有没有传递插槽。
-如果传了的话，就给elOption传递处理选择显示的插槽。
-
-经过我一番查阅文档和百度，发现setup语法糖没法实现。只能改成setup加return那种。
-setup函数里第二个参数中去接收slot插槽。然后利用jsx的灵活性就能够优雅地实现需求了。
-为啥要用jsx?因为template中给Eloption传递插槽没法用对象的方式，只要对应上了插槽名
-Eloption就会渲染。
-代码见下图
-</pre>
-<p><img src="/../img/img_6.png" alt="img.png"><br><img src="/../img/img_7.png" alt="img.png"><br><a target="_blank" rel="noopener" href="https://github.com/XueHua-s/personUntil/blob/main/Vue3Components/requesetEnumSearchSelect.vue">代码详情</a></p>
+<p>遇见了一个需求，需要在部门选择的时候，名称前面加上一级部门。</p>
+<p>但是，很多地方都用到了这个封装的组件。如何让这个地方优雅的处理掉，又不影响到别的地方呢?</p>
+<h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><p>我想到了一个点子。子组件判断父组件有没有传递插槽。如果传了的话，就给elOption传递处理选择显示的插槽。</p>
+<p>经过我一番查阅文档和百度，发现setup语法糖没法实现。只能改成setup加return那种。</p>
+<p>setup函数里第二个参数中去接收slot插槽。然后利用jsx的灵活性就能够优雅地实现需求了。</p>
+<h2 id="为什么使用JSX"><a href="#为什么使用JSX" class="headerlink" title="为什么使用JSX"></a>为什么使用JSX</h2><p>为啥要用jsx?因为template中给Eloption传递插槽没法用对象的方式，只要对应上了插槽名Eloption就会渲染。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>代码见下图：</p>
+<p><img src="/../img/img_6.png" alt="img.png"><br><img src="/../img/img_7.png" alt="img.png"></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/XueHua-s/personUntil/blob/main/Vue3Components/requesetEnumSearchSelect.vue">代码详情</a></p>
 
     </div>
 
@@ -267,7 +264,7 @@ Eloption就会渲染。
 
 <div class="copyright">
   &copy; 
-  <span itemprop="copyrightYear">2024</span>
+  <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
