@@ -121,7 +121,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -132,7 +132,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -149,6 +149,116 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/10/22/%E9%85%8D%E7%BD%AE%20Codex%20%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%89%E6%96%B9API/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小雪花白又白">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="雪花的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 雪花的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/10/22/%E9%85%8D%E7%BD%AE%20Codex%20%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%89%E6%96%B9API/" class="post-title-link" itemprop="url">配置 Codex 自定义三方API</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-10-22 10:00:00 / 修改时间：13:53:00" itemprop="dateCreated datePublished" datetime="2025-10-22T10:00:00+00:00">2025-10-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">技术教程</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>最近在用 Claude Code,换了成本更低的Codex,记录一下配置过程。方便以后查看，快速配置。</p>
+<h2 id="配置路径"><a href="#配置路径" class="headerlink" title="配置路径"></a>配置路径</h2><p>配置文件位置:</p>
+<ul>
+<li><strong>macOS&#x2F;Linux</strong>: <code>~/.codex/config.toml</code></li>
+<li><strong>Windows</strong>: <code>C:\Users\你的用户名\.codex\config.toml</code></li>
+</ul>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>直接上配置:</p>
+<figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">model_provider</span> = <span class="string">&quot;codex&quot;</span></span><br><span class="line"><span class="attr">model</span> = <span class="string">&quot;gpt-4.1-mini&quot;</span></span><br><span class="line"><span class="attr">model_reasoning_effort</span> = <span class="string">&quot;medium&quot;</span></span><br><span class="line"><span class="attr">disable_response_storage</span> = <span class="literal">true</span></span><br><span class="line"><span class="attr">windows_wsl_setup_acknowledged</span> = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="section">[model_providers.codex]</span></span><br><span class="line"><span class="attr">name</span> = <span class="string">&quot;codex&quot;</span></span><br><span class="line"><span class="attr">base_url</span>=<span class="string">&quot;https://api.burn.hair/v1&quot;</span> <span class="comment">#使用官方或第三方的</span></span><br><span class="line"><span class="attr">wire_api</span> = <span class="string">&quot;responses&quot;</span></span><br><span class="line"><span class="attr">env_key</span> = <span class="string">&quot;K_CODEX&quot;</span> <span class="comment">#不要改成自己的密钥,在系统环境变量中设置</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><p>几个关键配置:</p>
+<ul>
+<li><code>model_provider</code>: 设置成 <code>&quot;codex&quot;</code> 就行</li>
+<li><code>model</code>: 用的模型,这里是 <code>gpt-4.1-mini</code></li>
+<li><code>model_reasoning_effort</code>: 推理强度,<code>low</code>&#x2F;<code>medium</code>&#x2F;<code>high</code> 三档,medium 够用</li>
+<li><code>disable_response_storage</code>: 不保存历史记录,开启更安全</li>
+<li><code>base_url</code>: API 地址,换成你自己的</li>
+<li><code>env_key</code>: 环境变量名,<strong>密钥别直接写配置文件里</strong></li>
+</ul>
+<h2 id="设置步骤"><a href="#设置步骤" class="headerlink" title="设置步骤"></a>设置步骤</h2><h3 id="1-修改配置文件"><a href="#1-修改配置文件" class="headerlink" title="1. 修改配置文件"></a>1. 修改配置文件</h3><p>找到配置文件,把上面的配置复制进去,改一下 <code>base_url</code> 和 <code>model</code>。</p>
+<h3 id="2-设置环境变量"><a href="#2-设置环境变量" class="headerlink" title="2. 设置环境变量"></a>2. 设置环境变量</h3><p><strong>macOS&#x2F;Linux</strong> 在 <code>~/.zshrc</code> 或 <code>~/.bashrc</code> 加一行:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> K_CODEX=<span class="string">&quot;your-api-key-here&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后 <code>source ~/.zshrc</code> 生效。</p>
+<p><strong>Windows</strong> PowerShell 执行:</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="type">System.Environment</span>]::SetEnvironmentVariable(<span class="string">&#x27;K_CODEX&#x27;</span>, <span class="string">&#x27;your-api-key-here&#x27;</span>, <span class="string">&#x27;User&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-重启终端"><a href="#3-重启终端" class="headerlink" title="3. 重启终端"></a>3. 重启终端</h3><p>重启终端就能用了。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li>密钥别提交到 Git,用环境变量存</li>
+<li>连不上检查 base_url 和密钥</li>
+<li>可以配多个提供商,改 <code>model_provider</code> 切换</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -186,9 +296,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2025-10-21 21:00:34 / 修改时间：13:01:02" itemprop="dateCreated datePublished" datetime="2025-10-21T21:00:34+00:00">2025-10-21</time>
+      <time title="创建时间：2025-10-21 21:00:34" itemprop="dateCreated datePublished" datetime="2025-10-21T21:00:34+00:00">2025-10-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-10-22 13:53:00" itemprop="dateModified" datetime="2025-10-22T13:53:00+00:00">2025-10-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -353,9 +469,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2025-10-21 19:59:04 / 修改时间：13:01:02" itemprop="dateCreated datePublished" datetime="2025-10-21T19:59:04+00:00">2025-10-21</time>
+      <time title="创建时间：2025-10-21 19:59:04" itemprop="dateCreated datePublished" datetime="2025-10-21T19:59:04+00:00">2025-10-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-10-22 13:53:00" itemprop="dateModified" datetime="2025-10-22T13:53:00+00:00">2025-10-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -440,7 +562,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-21 13:01:02" itemprop="dateModified" datetime="2025-10-21T13:01:02+00:00">2025-10-21</time>
+      <time title="修改时间：2025-10-22 13:53:00" itemprop="dateModified" datetime="2025-10-22T13:53:00+00:00">2025-10-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -599,7 +721,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-21 13:01:02" itemprop="dateModified" datetime="2025-10-21T13:01:02+00:00">2025-10-21</time>
+      <time title="修改时间：2025-10-22 13:53:00" itemprop="dateModified" datetime="2025-10-22T13:53:00+00:00">2025-10-22</time>
     </span>
 
   
@@ -619,92 +741,6 @@
 <p>就很奇妙，所以，<strong>还是得避免使用循环依赖</strong>。我查阅了文档后才得知官网不推荐这么做。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>NestJS开发者们，希望不要和我一样。<strong>尽量避免循环依赖吧</strong>！</p>
 <h2 id="相关截图"><a href="#相关截图" class="headerlink" title="相关截图"></a>相关截图</h2><p><img src="/../img/img_8.png" alt="img.png"><br><img src="/../img/img_9.png" alt="img_1.png"><br><img src="/../img/img_10.png" alt="img_2.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/03/%E5%85%B3%E4%BA%8EVue3%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E7%88%B6%E7%BB%84%E4%BB%B6%E7%BB%99%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E4%BA%86%E6%8F%92%E6%A7%BD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="小雪花白又白">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="雪花的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 雪花的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/08/03/%E5%85%B3%E4%BA%8EVue3%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E7%88%B6%E7%BB%84%E4%BB%B6%E7%BB%99%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E4%BA%86%E6%8F%92%E6%A7%BD/" class="post-title-link" itemprop="url">关于Vue3如何判断父组件给子组件传了插槽</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-08-03 15:20:21" itemprop="dateCreated datePublished" datetime="2023-08-03T15:20:21+00:00">2023-08-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-21 13:01:02" itemprop="dateModified" datetime="2025-10-21T13:01:02+00:00">2025-10-21</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>首先看下面这段代码。</p>
-<p><img src="/../img/img_5.png" alt="img.png"></p>
-<p>遇见了一个需求，需要在部门选择的时候，名称前面加上一级部门。</p>
-<p>但是，很多地方都用到了这个封装的组件。如何让这个地方优雅的处理掉，又不影响到别的地方呢?</p>
-<h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><p>我想到了一个点子。子组件判断父组件有没有传递插槽。如果传了的话，就给elOption传递处理选择显示的插槽。</p>
-<p>经过我一番查阅文档和百度，发现setup语法糖没法实现。只能改成setup加return那种。</p>
-<p>setup函数里第二个参数中去接收slot插槽。然后利用jsx的灵活性就能够优雅地实现需求了。</p>
-<h2 id="为什么使用JSX"><a href="#为什么使用JSX" class="headerlink" title="为什么使用JSX"></a>为什么使用JSX</h2><p>为啥要用jsx?因为template中给Eloption传递插槽没法用对象的方式，只要对应上了插槽名Eloption就会渲染。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>代码见下图：</p>
-<p><img src="/../img/img_6.png" alt="img.png"><br><img src="/../img/img_7.png" alt="img.png"></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/XueHua-s/personUntil/blob/main/Vue3Components/requesetEnumSearchSelect.vue">代码详情</a></p>
 
       
     </div>

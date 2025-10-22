@@ -121,7 +121,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -132,7 +132,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -149,6 +149,92 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/03/%E5%85%B3%E4%BA%8EVue3%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E7%88%B6%E7%BB%84%E4%BB%B6%E7%BB%99%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E4%BA%86%E6%8F%92%E6%A7%BD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小雪花白又白">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="雪花的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 雪花的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/08/03/%E5%85%B3%E4%BA%8EVue3%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E7%88%B6%E7%BB%84%E4%BB%B6%E7%BB%99%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E4%BA%86%E6%8F%92%E6%A7%BD/" class="post-title-link" itemprop="url">关于Vue3如何判断父组件给子组件传了插槽</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-08-03 15:20:21" itemprop="dateCreated datePublished" datetime="2023-08-03T15:20:21+00:00">2023-08-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-10-22 13:53:00" itemprop="dateModified" datetime="2025-10-22T13:53:00+00:00">2025-10-22</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>首先看下面这段代码。</p>
+<p><img src="/../img/img_5.png" alt="img.png"></p>
+<p>遇见了一个需求，需要在部门选择的时候，名称前面加上一级部门。</p>
+<p>但是，很多地方都用到了这个封装的组件。如何让这个地方优雅的处理掉，又不影响到别的地方呢?</p>
+<h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><p>我想到了一个点子。子组件判断父组件有没有传递插槽。如果传了的话，就给elOption传递处理选择显示的插槽。</p>
+<p>经过我一番查阅文档和百度，发现setup语法糖没法实现。只能改成setup加return那种。</p>
+<p>setup函数里第二个参数中去接收slot插槽。然后利用jsx的灵活性就能够优雅地实现需求了。</p>
+<h2 id="为什么使用JSX"><a href="#为什么使用JSX" class="headerlink" title="为什么使用JSX"></a>为什么使用JSX</h2><p>为啥要用jsx?因为template中给Eloption传递插槽没法用对象的方式，只要对应上了插槽名Eloption就会渲染。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>代码见下图：</p>
+<p><img src="/../img/img_6.png" alt="img.png"><br><img src="/../img/img_7.png" alt="img.png"></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/XueHua-s/personUntil/blob/main/Vue3Components/requesetEnumSearchSelect.vue">代码详情</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -194,7 +280,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-21 13:01:02" itemprop="dateModified" datetime="2025-10-21T13:01:02+00:00">2025-10-21</time>
+      <time title="修改时间：2025-10-22 13:53:00" itemprop="dateModified" datetime="2025-10-22T13:53:00+00:00">2025-10-22</time>
     </span>
 
   
@@ -283,7 +369,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-21 13:01:02" itemprop="dateModified" datetime="2025-10-21T13:01:02+00:00">2025-10-21</time>
+      <time title="修改时间：2025-10-22 13:53:00" itemprop="dateModified" datetime="2025-10-22T13:53:00+00:00">2025-10-22</time>
     </span>
 
   
@@ -369,7 +455,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-21 13:01:02" itemprop="dateModified" datetime="2025-10-21T13:01:02+00:00">2025-10-21</time>
+      <time title="修改时间：2025-10-22 13:53:00" itemprop="dateModified" datetime="2025-10-22T13:53:00+00:00">2025-10-22</time>
     </span>
 
   
@@ -451,7 +537,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-21 13:01:02" itemprop="dateModified" datetime="2025-10-21T13:01:02+00:00">2025-10-21</time>
+      <time title="修改时间：2025-10-22 13:53:00" itemprop="dateModified" datetime="2025-10-22T13:53:00+00:00">2025-10-22</time>
     </span>
 
   
@@ -470,85 +556,6 @@
 <h2 id="代码地址"><a href="#代码地址" class="headerlink" title="代码地址"></a>代码地址</h2><a href="https://github.com/XueHua-s/personUntil/blob/main/elementTableDrap.js" target="_blank">
 打开github链接
 </a>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/07/js%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E5%AF%B9%E8%B1%A1%E6%B7%B1%E6%8B%B7%E8%B4%9D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="小雪花白又白">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="雪花的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 雪花的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/07/js%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E5%AF%B9%E8%B1%A1%E6%B7%B1%E6%8B%B7%E8%B4%9D/" class="post-title-link" itemprop="url">js循环依赖对象深拷贝</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-03-07 13:37:26" itemprop="dateCreated datePublished" datetime="2023-03-07T13:37:26+00:00">2023-03-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-21 13:01:02" itemprop="dateModified" datetime="2025-10-21T13:01:02+00:00">2025-10-21</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="循环依赖示例"><a href="#循环依赖示例" class="headerlink" title="循环依赖示例"></a>循环依赖示例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;&#125;</span><br><span class="line"><span class="keyword">let</span> b = &#123; a &#125;</span><br><span class="line">a.<span class="property">b</span> = b</span><br></pre></td></tr></table></figure>
-
-<h2 id="经验分享"><a href="#经验分享" class="headerlink" title="经验分享"></a>经验分享</h2><p>这样的循环依赖的对象，需要每次递归的时候保留上一次递归的层级。<br>并判断这次递归的内容中，有没有上一次的内容。<br>如果有的话，就直接返回上一次的内容就行了。中断了递归。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type"> object </span>&#125; <span class="variable">obj</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@returns</span> &#123;<span class="type"> object </span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">deepCopy</span> = (<span class="params">obj, stack = []</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> target = <span class="literal">null</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> obj === <span class="string">&#x27;object&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(stack.<span class="title function_">includes</span>(obj)) &#123;</span><br><span class="line">      <span class="keyword">return</span> obj</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      stack.<span class="title function_">push</span>(obj)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="title class_">Array</span>.<span class="title function_">isArray</span>(obj)) &#123;</span><br><span class="line">      target = []</span><br><span class="line">      obj.<span class="title function_">forEach</span>(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">        target.<span class="title function_">push</span>(<span class="title function_">deepCopy</span>(item, stack))</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (obj) &#123;</span><br><span class="line">      target = &#123;&#125;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">const</span> [key, value] <span class="keyword">of</span> <span class="title class_">Object</span>.<span class="title function_">entries</span>(obj)) &#123;</span><br><span class="line">        target[key] = <span class="title function_">deepCopy</span>(obj[key], stack)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      target = obj</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    target = obj</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> target</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> deepCopy</span><br></pre></td></tr></table></figure>
 
       
     </div>
