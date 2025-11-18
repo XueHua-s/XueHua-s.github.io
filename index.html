@@ -188,7 +188,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-11-18 18:00:00 / 修改时间：11:19:20" itemprop="dateCreated datePublished" datetime="2025-11-18T18:00:00+00:00">2025-11-18</time>
+      <time title="创建时间：2025-11-18 18:00:00 / 修改时间：11:22:28" itemprop="dateCreated datePublished" datetime="2025-11-18T18:00:00+00:00">2025-11-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -388,16 +388,6 @@
 <h3 id="5-性能监控埋点"><a href="#5-性能监控埋点" class="headerlink" title="5. 性能监控埋点"></a>5. 性能监控埋点</h3><p>在关键路径添加时间戳记录，便于定位性能瓶颈。</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 启动开始</span></span><br><span class="line"><span class="keyword">const</span> startupTime = performance.<span class="title function_">now</span>();</span><br><span class="line">log.<span class="title function_">info</span>(<span class="string">&#x27;⏱️ 主进程启动开始&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// app.whenReady 触发</span></span><br><span class="line">app.<span class="title function_">whenReady</span>().<span class="title function_">then</span>(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> readyTime = performance.<span class="title function_">now</span>();</span><br><span class="line">  log.<span class="title function_">info</span>(<span class="string">`⏱️ app.whenReady 触发，耗时: <span class="subst">$&#123;(readyTime - startupTime).toFixed(<span class="number">2</span>)&#125;</span>ms`</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 窗口创建</span></span><br><span class="line">  <span class="keyword">const</span> createWindowStart = performance.<span class="title function_">now</span>();</span><br><span class="line">  mainWin = <span class="keyword">await</span> <span class="title function_">createWindow</span>();</span><br><span class="line">  <span class="keyword">const</span> createWindowEnd = performance.<span class="title function_">now</span>();</span><br><span class="line">  log.<span class="title function_">info</span>(<span class="string">`⏱️ 窗口创建耗时: <span class="subst">$&#123;(createWindowEnd - createWindowStart).toFixed(<span class="number">2</span>)&#125;</span>ms`</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 总耗时</span></span><br><span class="line">  <span class="keyword">const</span> totalTime = performance.<span class="title function_">now</span>();</span><br><span class="line">  log.<span class="title function_">info</span>(<span class="string">`⏱️ ✅ 主进程启动完成，总耗时: <span class="subst">$&#123;(totalTime - startupTime).toFixed(<span class="number">2</span>)&#125;</span>ms`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h2 id="进一步优化建议"><a href="#进一步优化建议" class="headerlink" title="进一步优化建议"></a>进一步优化建议</h2><h3 id="1-渲染进程优化"><a href="#1-渲染进程优化" class="headerlink" title="1. 渲染进程优化"></a>1. 渲染进程优化</h3><ul>
-<li>使用 <code>React.lazy()</code> 或 <code>Vue defineAsyncComponent</code> 实现路由级代码分割</li>
-<li>启用 Vite 的 <code>preload</code> 和 <code>prefetch</code> 策略</li>
-<li>优化首屏渲染关键路径</li>
-</ul>
-<h3 id="2-资源加载优化"><a href="#2-资源加载优化" class="headerlink" title="2. 资源加载优化"></a>2. 资源加载优化</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用 Electron 协议加快本地资源加载</span></span><br><span class="line">protocol.<span class="title function_">registerFileProtocol</span>(<span class="string">&#x27;app&#x27;</span>, <span class="function">(<span class="params">request, callback</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> url = request.<span class="property">url</span>.<span class="title function_">substr</span>(<span class="number">6</span>); <span class="comment">// 移除 &#x27;app://&#x27; 前缀</span></span><br><span class="line">  <span class="title function_">callback</span>(&#123; <span class="attr">path</span>: <span class="title function_">normalize</span>(<span class="string">`<span class="subst">$&#123;__dirname&#125;</span>/<span class="subst">$&#123;url&#125;</span>`</span>) &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-依赖外部化"><a href="#3-依赖外部化" class="headerlink" title="3. 依赖外部化"></a>3. 依赖外部化</h3><p>将大型依赖（如 <code>@electron/remote</code>、<code>serialport</code>）标记为 external，避免打包进主进程代码。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vite.config.ts</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">  <span class="attr">build</span>: &#123;</span><br><span class="line">    <span class="attr">rollupOptions</span>: &#123;</span><br><span class="line">      <span class="attr">external</span>: [</span><br><span class="line">        <span class="string">&#x27;@electron/remote&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;serialport&#x27;</span>,</span><br><span class="line">        <span class="comment">// 其他原生模块</span></span><br><span class="line">      ],</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
 <h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="Q1-V8-缓存文件会无限增长吗？"><a href="#Q1-V8-缓存文件会无限增长吗？" class="headerlink" title="Q1: V8 缓存文件会无限增长吗？"></a>Q1: V8 缓存文件会无限增长吗？</h3><p>A: 不会。Electron 会自动管理缓存大小，定期清理过期文件。通常缓存目录大小在几十 MB 左右。</p>
 <h3 id="Q2-代码拆包会影响运行时性能吗？"><a href="#Q2-代码拆包会影响运行时性能吗？" class="headerlink" title="Q2: 代码拆包会影响运行时性能吗？"></a>Q2: 代码拆包会影响运行时性能吗？</h3><p>A: 影响极小。模块拆分后，V8 的模块加载机制（ESM）可以高效处理多文件依赖，且拆包后的缓存粒度更细，整体性能反而更优。</p>
 <h3 id="Q3-动态-import-会导致功能延迟吗？"><a href="#Q3-动态-import-会导致功能延迟吗？" class="headerlink" title="Q3: 动态 import 会导致功能延迟吗？"></a>Q3: 动态 import 会导致功能延迟吗？</h3><p>A: 对用户几乎无感知。以划词翻译为例，从主窗口启动到用户实际使用该功能有足够的时间差，异步加载完全可以在用户操作前完成。</p>
@@ -480,7 +470,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-11-18 11:19:20" itemprop="dateModified" datetime="2025-11-18T11:19:20+00:00">2025-11-18</time>
+      <time title="修改时间：2025-11-18 11:22:28" itemprop="dateModified" datetime="2025-11-18T11:22:28+00:00">2025-11-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -572,7 +562,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-11-18 11:19:20" itemprop="dateModified" datetime="2025-11-18T11:19:20+00:00">2025-11-18</time>
+      <time title="修改时间：2025-11-18 11:22:28" itemprop="dateModified" datetime="2025-11-18T11:22:28+00:00">2025-11-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -683,7 +673,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-11-18 11:19:20" itemprop="dateModified" datetime="2025-11-18T11:19:20+00:00">2025-11-18</time>
+      <time title="修改时间：2025-11-18 11:22:28" itemprop="dateModified" datetime="2025-11-18T11:22:28+00:00">2025-11-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -856,7 +846,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-11-18 11:19:20" itemprop="dateModified" datetime="2025-11-18T11:19:20+00:00">2025-11-18</time>
+      <time title="修改时间：2025-11-18 11:22:28" itemprop="dateModified" datetime="2025-11-18T11:22:28+00:00">2025-11-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
