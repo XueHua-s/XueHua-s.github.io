@@ -121,7 +121,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -132,7 +132,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -149,6 +149,88 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/23/%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%BA%93indexDB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小雪花白又白">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="雪花的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 雪花的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/06/23/%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%BA%93indexDB/" class="post-title-link" itemprop="url">关于前端数据库indexDB</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-06-23 14:25:11" itemprop="dateCreated datePublished" datetime="2023-06-23T14:25:11+00:00">2023-06-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-11-18 11:19:20" itemprop="dateModified" datetime="2025-11-18T11:19:20+00:00">2025-11-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="为什么需要IndexDB"><a href="#为什么需要IndexDB" class="headerlink" title="为什么需要IndexDB"></a>为什么需要IndexDB</h2><p>前端加载某些过大的静态文件，而且还是无法被浏览器缓存的资源时。每次都要浪费很多时间。</p>
+<p>比如three.js需要使用的建模文件。如果只有几十kb，几MB的话倒还好。如果模型文件十多M，甚至是几百多M的话。每次关闭网页再重新打开，就又重新加载一遍。长时间的重复等待实在是倒人胃口。</p>
+<p>这个时候就可以用indexDB将这些大型文件存起来。避免重复加载这些资源，而倒人胃口。</p>
+<h2 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h2><p>关于这个问题，我自己钻研了一下，并且封装了一个操作IndexDB的方法(详情见文章下链接)。</p>
+<p>有一说一，这个东西比MongoDB难用。不能够直接新建表，必须每次在升级数据版本的时候，触发的周期里才能去新建。实在是，太难受了。</p>
+<p><img src="/../img/src=http___img.nga.178.com_attachments_mon_202206_26_i2Q2q-8ns4Z1vT3cSwi-wi.jpg&refer=http___img.nga.178.webp" alt="emj"></p>
+<h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><p><a target="_blank" rel="noopener" href="https://github.com/XueHua-s/personUntil/blob/main/indexDB.js">IndexDB使用方法</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -194,7 +276,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-27 14:49:44" itemprop="dateModified" datetime="2025-10-27T14:49:44+00:00">2025-10-27</time>
+      <time title="修改时间：2025-11-18 11:19:20" itemprop="dateModified" datetime="2025-11-18T11:19:20+00:00">2025-11-18</time>
     </span>
 
   
@@ -275,7 +357,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-27 14:49:44" itemprop="dateModified" datetime="2025-10-27T14:49:44+00:00">2025-10-27</time>
+      <time title="修改时间：2025-11-18 11:19:20" itemprop="dateModified" datetime="2025-11-18T11:19:20+00:00">2025-11-18</time>
     </span>
 
   
@@ -354,7 +436,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-27 14:49:44" itemprop="dateModified" datetime="2025-10-27T14:49:44+00:00">2025-10-27</time>
+      <time title="修改时间：2025-11-18 11:19:20" itemprop="dateModified" datetime="2025-11-18T11:19:20+00:00">2025-11-18</time>
     </span>
 
   
@@ -430,7 +512,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-27 14:49:44" itemprop="dateModified" datetime="2025-10-27T14:49:44+00:00">2025-10-27</time>
+      <time title="修改时间：2025-11-18 11:19:20" itemprop="dateModified" datetime="2025-11-18T11:19:20+00:00">2025-11-18</time>
     </span>
 
   
@@ -455,87 +537,6 @@
 
 <p>如果更改，或添加pptpd账号。也是需要重启pptp的。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service pptpd restart  <span class="comment"># 重启pptp</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/04/%E4%B8%8D%E5%88%B0%E5%8D%8A%E4%B8%AA%E6%9C%88%E5%B0%B1%E8%A6%81%E5%8F%98%E7%8C%AB%E4%BA%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="小雪花白又白">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="雪花的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 雪花的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/02/04/%E4%B8%8D%E5%88%B0%E5%8D%8A%E4%B8%AA%E6%9C%88%E5%B0%B1%E8%A6%81%E5%8F%98%E7%8C%AB%E4%BA%86/" class="post-title-link" itemprop="url">不到半个月就要变猫了</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-02-04 21:09:52" itemprop="dateCreated datePublished" datetime="2023-02-04T21:09:52+00:00">2023-02-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-27 14:49:44" itemprop="dateModified" datetime="2025-10-27T14:49:44+00:00">2025-10-27</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>距离SRS还有12天大概的样子吧。如果不出意外的话。</p>
-<p>说实话个人感觉挺慌的</p>
-<p>术前紧张。肯定有的。害!!</p>
-<p>但愿未来能够一切顺利吧</p>
-
-<p><img src="/../img/QQ%E5%9B%BE%E7%89%8720230204211241.jpg" alt="emj"></p>
 
       
     </div>
