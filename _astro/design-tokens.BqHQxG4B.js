@@ -1,0 +1,1 @@
+const n={duration:{fast:150},spring:{gentle:{type:"spring",stiffness:200,damping:25},menu:{type:"spring",stiffness:300,damping:25},popoverContent:{type:"spring",stiffness:300,damping:20}}};export{n as a};
