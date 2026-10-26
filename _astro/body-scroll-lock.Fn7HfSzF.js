@@ -1,0 +1,1 @@
+const l=new WeakMap;function r(){const e=document.body;let o=l.get(e);o||(o={count:0,overflow:e.style.overflow},l.set(e,o)),o.count++,e.style.overflow="hidden";let t=!1;return()=>{t||(t=!0,--o.count===0&&(e.style.overflow=o.overflow,l.delete(e)))}}export{r as l};

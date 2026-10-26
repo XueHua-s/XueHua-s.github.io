@@ -1,4 +1,19 @@
 <!DOCTYPE html><html lang="en" data-theme="light"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><title>雪花の博客</title><meta name="description" content="爬起仅仅是因为不想输"><script>
+      // 立即执行主题检查 否则会闪烁
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+        document.documentElement.dataset.theme = 'dark';
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+        document.documentElement.dataset.theme = 'light';
+      }
+    </script><script>
       // iOS Safari pinch-zoom guard (viewport meta alone is not always respected)
       (() => {
         const blockGesture = (event) => event.preventDefault();
@@ -6,5 +21,103 @@
         document.addEventListener('gesturechange', blockGesture, { passive: false });
         document.addEventListener('gestureend', blockGesture, { passive: false });
       })();
-    </script><link rel="stylesheet" href="/_astro/about.D1L5OLJw.css">
-<link rel="stylesheet" href="/_astro/index.Cpnbcg06.css"><script type="module" src="/_astro/page.ZddQXtzH.js"></script></head> <body class="bg-slate-50 text-slate-900 antialiased transition-colors duration-150 dark:bg-slate-950 dark:text-slate-50 overflow-hidden"> <main class="flex h-screen w-screen flex-col overflow-hidden p-0">  <link rel="preload" as="image" href="/img/724d7fb480c8ac0db472ca5c7e36d239.jpg"/><section class="relative h-screen overflow-hidden bg-gradient-to-br"><div class="absolute inset-0"><div class="fixed inset-0 h-screen w-screen bg-cover bg-center bg-fixed opacity-70" style="background-image:url(&#x27;/img/backgrounds/e12abfe0102383a45fb1738ebb0bb738.webp&#x27;)"></div></div><div class="relative mx-auto flex h-full w-full max-w-[860px] flex-col px-5"><div class="flex flex-1 items-center justify-center"><div class="w-full rounded-[20px] border-2 border-pink-light bg-gradient-to-br from-white/95 to-pink-soft/95 p-6 shadow-pink-card backdrop-blur-md sm:p-10"><div class="flex justify-center"><div class="relative mb-6 h-[150px] w-[150px] rounded-full border-4 border-pink-border shadow-pink-avatar"><img src="/img/724d7fb480c8ac0db472ca5c7e36d239.jpg" alt="SnowAvatar" class="h-full w-full rounded-full object-cover transition-transform duration-700 ease-in-out hover:rotate-[360deg]"/></div></div><div class="text-center"><h1 class="text-[2.5rem] font-bold tracking-[1px] text-pink-main" style="text-shadow:2px 2px 8px rgba(255,105,180,0.3)">Snow</h1><p class="mx-auto mt-3 max-w-[560px] px-5 text-[1.1rem] italic text-[#666]">“爬起仅仅只是因为不想输。”</p></div><div class="mt-6 flex flex-wrap justify-center gap-3"><a class="flex min-w-[200px] items-center justify-center gap-2 rounded-[25px] bg-gradient-to-r from-[#00a1d6] to-[#0086b3] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_10px_rgba(0,161,214,0.35)] transition hover:-translate-y-0.5" href="https://space.bilibili.com/158525031" target="_blank" rel="noreferrer"><i class="fa-brands fa-bilibili text-base" aria-hidden="true"></i>哔哩哔哩</a><a class="flex min-w-[200px] items-center justify-center gap-2 rounded-[25px] bg-gradient-to-r from-[#229ed9] to-[#1b84b4] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_10px_rgba(34,158,217,0.35)] transition hover:-translate-y-0.5" href="https://t.me/litleSnow" target="_blank" rel="noreferrer"><i class="fa-brands fa-telegram text-base" aria-hidden="true"></i>Telegram</a><a class="flex min-w-[200px] items-center justify-center gap-2 rounded-[25px] bg-gradient-to-r from-[#111111] to-[#2a2a2a] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_10px_rgba(17,17,17,0.3)] transition hover:-translate-y-0.5" href="https://x.com/xiaoxueljx?s=21" target="_blank" rel="noreferrer"><i class="fa-brands fa-x-twitter text-base" aria-hidden="true"></i>X</a><a class="flex min-w-[200px] items-center justify-center gap-2 rounded-[25px] bg-gradient-to-r from-[#24292e] to-[#1f2327] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_10px_rgba(36,41,46,0.3)] transition hover:-translate-y-0.5" href="https://github.com/XueHua-s" target="_blank" rel="noreferrer"><i class="fa-brands fa-github text-base" aria-hidden="true"></i>GitHub</a><a class="flex min-w-[200px] items-center justify-center gap-2 rounded-[25px] bg-gradient-to-r from-[#ff7aa2] to-[#ff4f87] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_10px_rgba(255,79,135,0.3)] transition hover:-translate-y-0.5" href="/blog"><i class="fa-solid fa-pen-nib text-base" aria-hidden="true"></i>进入博客</a></div></div></div><div class="fixed bottom-6 right-6 z-20 flex flex-col items-start gap-2"><div class="w-[86px] h-[86px] overflow-hidden rounded-[14px] border border-pink-border/60 bg-white/80 shadow-[0_8px_18px_rgba(255,105,180,0.2)] backdrop-blur"><iframe title="网易云音乐播放器" frameBorder="no" marginWidth="0" marginHeight="0" width="86" height="86" src="//music.163.com/outchain/player?type=2&amp;id=28283665&amp;auto=1&amp;height=66" sandbox="allow-scripts allow-same-origin"></iframe></div></div><footer class="pb-6 text-center text-sm text-pink-main">© Snowの小窝 - 2022-2025</footer></div></section>  </main> </body></html> 
+    </script><link rel="stylesheet" href="/_astro/about.DU1WBLwG.css">
+<link rel="stylesheet" href="/_astro/index.laCwAQZr.css">
+<style>.glass-filter-defs[data-astro-cid-5jkzjwo3]{position:absolute;top:0;left:0;overflow:hidden;pointer-events:none}
+</style><script type="module" src="/_astro/page.ZddQXtzH.js"></script></head> <body class="bg-slate-50 text-slate-900 antialiased transition-colors duration-150 dark:bg-slate-950 dark:text-slate-50 overflow-hidden"> <svg class="glass-filter-defs" width="0" height="0" aria-hidden="true" focusable="false" data-astro-cid-5jkzjwo3> <defs data-astro-cid-5jkzjwo3> <filter id="glass-refraction" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB" data-astro-cid-5jkzjwo3> <feTurbulence type="fractalNoise" baseFrequency="0.008 0.014" numOctaves="2" seed="11" result="noise" data-astro-cid-5jkzjwo3></feTurbulence> <feGaussianBlur in="noise" stdDeviation="1.2" result="softNoise" data-astro-cid-5jkzjwo3></feGaussianBlur> <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blurred" data-astro-cid-5jkzjwo3></feGaussianBlur> <feColorMatrix in="blurred" type="saturate" values="1.7" result="saturated" data-astro-cid-5jkzjwo3></feColorMatrix> <feDisplacementMap in="saturated" in2="softNoise" scale="12" xChannelSelector="R" yChannelSelector="G" data-astro-cid-5jkzjwo3></feDisplacementMap> </filter> </defs> </svg> <script>
+  (() => {
+    try {
+      const ua = navigator.userAgent || '';
+      const isIOS =
+        /iPad|iPhone|iPod/.test(ua) ||
+        (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+      const isGecko = /Firefox|FxiOS/.test(ua);
+      const isChromium =
+        /Chrome|Chromium|Edg\//.test(ua) && !isIOS && !isGecko;
+
+      if (
+        isChromium &&
+        typeof CSS !== 'undefined' &&
+        CSS.supports &&
+        CSS.supports('backdrop-filter', 'url(#glass-refraction)')
+      ) {
+        document.documentElement.classList.add('glass-refract-supported');
+      }
+    } catch {
+      // Keep the baseline blur if feature detection is unavailable.
+    }
+  })();
+</script>  <main class="flex h-screen w-screen flex-col overflow-hidden p-0">  <link rel="preload" as="image" href="/img/724d7fb480c8ac0db472ca5c7e36d239.jpg"/><section class="relative h-screen overflow-hidden bg-gradient-to-br"><div class="absolute inset-0"><div class="fixed inset-0 h-screen w-screen bg-cover bg-center opacity-70" style="background-image:url(&#x27;/img/backgrounds/4ab7af3d4c649d38e614a9e8c8295826.webp&#x27;)"></div><div aria-hidden="true" class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/35"></div></div><div class="relative mx-auto flex h-full w-full max-w-[860px] flex-col px-5"><div class="flex flex-1 items-center justify-center"><div class="glass glass-hero glass-refract relative w-full p-6" data-glass-hero="true"><div class="glass-specular pointer-events-none -z-10" aria-hidden="true"></div><div class="flex justify-center"><div class="relative mb-6 h-[150px] w-[150px] rounded-full border-2 border-[var(--glass-border)]"><img src="/img/724d7fb480c8ac0db472ca5c7e36d239.jpg" alt="SnowAvatar" class="h-full w-full rounded-full object-cover"/></div></div><div class="text-center"><h1 class="text-[2.5rem] font-bold tracking-[1px]">Snow</h1><p class="mx-auto mt-3 max-w-[560px] px-5 text-[1.1rem] italic text-[#666] dark:text-gray-300">“爬起仅仅只是因为不想输。”</p></div><div class="mt-6 flex flex-wrap justify-center gap-3"><a class="flex min-w-[200px] items-center justify-center gap-2 rounded-[25px] px-5 py-2.5 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[hsl(var(--glass-primary-hsl))] material-action" href="https://space.bilibili.com/158525031" target="_blank" rel="noreferrer"><i class="fa-brands fa-bilibili text-base" aria-hidden="true"></i>哔哩哔哩</a><a class="flex min-w-[200px] items-center justify-center gap-2 rounded-[25px] px-5 py-2.5 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[hsl(var(--glass-primary-hsl))] material-action" href="https://t.me/litleSnow" target="_blank" rel="noreferrer"><i class="fa-brands fa-telegram text-base" aria-hidden="true"></i>Telegram</a><a class="flex min-w-[200px] items-center justify-center gap-2 rounded-[25px] px-5 py-2.5 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[hsl(var(--glass-primary-hsl))] material-action" href="https://x.com/xiaoxueljx?s=21" target="_blank" rel="noreferrer"><i class="fa-brands fa-x-twitter text-base" aria-hidden="true"></i>X</a><a class="flex min-w-[200px] items-center justify-center gap-2 rounded-[25px] px-5 py-2.5 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[hsl(var(--glass-primary-hsl))] material-action" href="https://github.com/XueHua-s" target="_blank" rel="noreferrer"><i class="fa-brands fa-github text-base" aria-hidden="true"></i>GitHub</a><a class="flex min-w-[200px] items-center justify-center gap-2 rounded-[25px] px-5 py-2.5 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[hsl(var(--glass-primary-hsl))] bg-[hsl(var(--glass-primary-hsl))] text-[hsl(var(--glass-primary-ink))] hover:brightness-110" href="/blog"><i class="fa-solid fa-pen-nib text-base" aria-hidden="true"></i>进入博客</a></div></div></div><div class="fixed bottom-6 right-6 z-20 flex flex-col items-start gap-2"><div class="glass glass-flat h-[86px] w-[86px] overflow-hidden"><iframe title="网易云音乐播放器" width="86" height="86" src="//music.163.com/outchain/player?type=2&amp;id=28283665&amp;auto=1&amp;height=66" sandbox="allow-scripts allow-same-origin" style="border:0"></iframe></div></div><footer class="pb-6 text-center text-sm text-pink-main">© Snowの小窝 - 2022-2025</footer></div></section>   </main>  <script>
+      (() => {
+        const hero = document.querySelector('[data-glass-hero]');
+        if (!hero) return;
+
+        const specular = hero.querySelector('.glass-specular');
+        if (!specular) return;
+
+        const reduceMotion = window.matchMedia(
+          '(prefers-reduced-motion: reduce)',
+        );
+        const coarsePointer = window.matchMedia('(pointer: coarse)');
+        const motionAllowed = () =>
+          !reduceMotion.matches && !coarsePointer.matches;
+
+        let frame = 0;
+        let x = 50;
+        let y = 0;
+
+        // FIXED: Preferences can change after initialization, even between a
+        // pointer event and its queued paint. Cancel and reset both paths.
+        const reset = () => {
+          if (frame) cancelAnimationFrame(frame);
+          frame = 0;
+          x = 50;
+          y = 0;
+          specular.style.removeProperty('--sheen-x');
+          specular.style.removeProperty('--sheen-y');
+        };
+
+        const syncPreferences = () => {
+          if (!motionAllowed()) reset();
+        };
+        reduceMotion.addEventListener('change', syncPreferences);
+        coarsePointer.addEventListener('change', syncPreferences);
+
+        const paint = () => {
+          frame = 0;
+          if (!motionAllowed()) {
+            reset();
+            return;
+          }
+          specular.style.setProperty('--sheen-x', x + '%');
+          specular.style.setProperty('--sheen-y', y + '%');
+        };
+
+        const schedule = () => {
+          if (motionAllowed() && !frame) frame = requestAnimationFrame(paint);
+        };
+
+        hero.addEventListener(
+          'pointermove',
+          (event) => {
+            if (!motionAllowed()) return;
+            const rect = hero.getBoundingClientRect();
+            if (!rect.width || !rect.height) return;
+            x = ((event.clientX - rect.left) / rect.width) * 100;
+            y = ((event.clientY - rect.top) / rect.height) * 100;
+            schedule();
+          },
+          { passive: true },
+        );
+
+        hero.addEventListener(
+          'pointerleave',
+          () => {
+            x = 50;
+            y = 0;
+            schedule();
+          },
+          { passive: true },
+        );
+      })();
+    </script>  </body></html> 
